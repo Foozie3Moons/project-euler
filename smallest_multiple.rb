@@ -1,11 +1,13 @@
 # 2520 is the smallest number that can be divided by each of the numbers from 1
-# to 10 without any remainder.
+#  to 10 without any remainder.
 # What is the smallest positive number that is evenly divisible by all of the
-# numbers from 1 to 20?
+#  numbers from 1 to 20?
 
 ## WANT: while false, for each number check to see if the number is divisible
 ######## by every number in divisible_numbers. Return true if the number is
 ######## divisible by 20.
+
+## SOLUTION: Works but is pretty slow. Current iteration runs for 1275.275942 seconds
 
 start_time = Time.new()
 divisible_numbers = (1..20).to_a
