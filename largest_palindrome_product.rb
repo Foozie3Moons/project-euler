@@ -1,22 +1,21 @@
 p_num_1 = 999
 p_num_2 = 999
 palendrome = false
-product = p_num_1 * p_num_2
 combinations_checked = []
-combinations_checked.push(product)
-while palendrome == false
+while !palendrome
   product = p_num_1 * p_num_2
-  if combinations_checked.include?(product)
+  puts product
+  if !combinations_checked.include?(product)
     p_total_string = product.to_s
     if p_total_string.length == 6
       if p_total_string[0] == p_total_string[5]
         if p_total_string[1] == p_total_string[4]
           if p_total_string[2] == p_total_string[3]
-            puts "---"
+            puts "\n\n\n\n\n\n---"
             puts "p_num_1: #{p_num_2}"
             puts "p_num_2: #{p_num_2}"
             puts "product: #{product}"
-            puts "---\n"
+            puts "---\n\n\n\n\n\n"
             palendrome = true
           else
             p_num_1 - 1
@@ -30,11 +29,11 @@ while palendrome == false
     elsif p_total_string.length == 5
       if p_total_string[0] == p_total_string[4]
         if p_total_string[1] == p_total_string[3]
-          puts "---"
+          puts "---\n\n\n\n\n\n"
           puts "p_num_1: #{p_num_2}"
           puts "p_num_2: #{p_num_2}"
           puts "product: #{product}"
-          puts "---\n"
+          puts "---\n\n\n\n\n\n"
           palendrome = true
         else
           p_num_1 - 1
