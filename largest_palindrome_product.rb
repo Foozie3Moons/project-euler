@@ -1,57 +1,22 @@
-p_num_1 = 999
-p_num_2 = 999
-palendrome = false
-combinations_checked = []
-while !palendrome
-  product = p_num_1 * p_num_2
-  puts product
-  if !combinations_checked.include?(product)
-    p_total_string = product.to_s
-    if p_total_string.length == 6
-      if p_total_string[0] == p_total_string[5]
-        if p_total_string[1] == p_total_string[4]
-          if p_total_string[2] == p_total_string[3]
-            puts "\n\n\n\n\n\n---"
-            puts "p_num_1: #{p_num_2}"
-            puts "p_num_2: #{p_num_2}"
-            puts "product: #{product}"
-            puts "---\n\n\n\n\n\n"
-            palendrome = true
-          else
-            p_num_1 - 1
-          end
-        else
-          p_num_1 - 1
-        end
-      else
-        p_num_1 -1
+# A palindromic number reads the same both ways. The largest palindrome made from
+# the product of two 2-digit numbers is 9009 = 91 × 99.
+
+# Find the largest palindrome made from the product of two 3-digit numbers.
+
+def is_palendrome(num)
+  return num.to_s.reverse === num.to_s
+end
+
+largest_palendrome = 0
+
+(100..999).each do |x|
+  (100..999).each do |y|
+    if is_palendrome(x * y)
+      if x * y > largest_palendrome
+        largest_palendrome = x * y
       end
-    elsif p_total_string.length == 5
-      if p_total_string[0] == p_total_string[4]
-        if p_total_string[1] == p_total_string[3]
-          puts "---\n\n\n\n\n\n"
-          puts "p_num_1: #{p_num_2}"
-          puts "p_num_2: #{p_num_2}"
-          puts "product: #{product}"
-          puts "---\n\n\n\n\n\n"
-          palendrome = true
-        else
-          p_num_1 - 1
-        end
-      else
-        p_num_1 - 1
-      end
-    else
-      p_num_1 -1
     end
-    p_num_1 -1
-    if p_num_1 < 100
-      p_num_1 = 999
-      p_num_2 = 998
-    end
-    puts "pushed"
-    combinations_checked.push(product)
-  else
-    puts "skipped"
   end
 end
+
+puts largest_palendrome
